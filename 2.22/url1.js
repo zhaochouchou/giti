@@ -9,7 +9,11 @@ http.createServer((req,res)=>{
 	
 	var obj=url.parse(req.url,true).query
 	
-	res.end("用户名"+obj.username+"密码"+obj.password)
+	if (obj.username=="12333"&&obj.password=="333") {
+		res.end("登录成功")
+	} else{
+		res.end("密码错误")
+	}
 	
 }).listen(3000)
 	
